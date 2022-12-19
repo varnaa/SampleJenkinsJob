@@ -10,19 +10,25 @@ pipeline {
       }
     }
     stage('Preparation') {
-      echo 'Successfully cloned repository...'
+      steps{
+         echo 'Successfully cloned repository...'
+      }
     }
     stage('Build') {
-      sh '''
-        java--version
-        echo "changing into directory src"
-        cd src
-        pwd
-        java Main.java
-      '''
+      steps{
+        sh '''
+          java--version
+          echo "changing into directory src"
+          cd src
+          pwd
+          java Main.java
+        '''
+      }
     }
     stage('Results') {
-      echo "Ending job ..."
+      steps{
+        echo "Ending job ..."
+      }
     }
   }
 }
