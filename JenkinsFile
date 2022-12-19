@@ -14,11 +14,12 @@ pipeline {
     }
     stage('Build') {
       sh '''
-      java--version
-      echo "changing into directory src"
-      cd src
-      pwd
-      java Main.java '''
+        java--version
+        echo "changing into directory src"
+        cd src
+        pwd
+        java Main.java
+      '''
     }
     stage('Results') {
       echo "Ending job ..."
