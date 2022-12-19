@@ -1,14 +1,6 @@
 pipeline {
   agent any
-  parameters {
-    gitParameter branchFilter: '.*', defaultValue: 'master', name: 'BRANCH', type: 'PT_BRANCH'
-  }
   stages {
-    stage('Git clone') {
-      steps {
-        git branch: "${params.BRANCH}", url: 'https://github.com/varnaa/SampleJenkinsJob.git'
-      }
-    }
     stage('Preparation') {
       steps{
          echo 'Successfully cloned repository...'
